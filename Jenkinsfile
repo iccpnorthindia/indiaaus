@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t iccpinfotech/ausmanju:$BUILD_NUMBER .'
+                sh 'docker build -t iccpinfotech/ausmanjujs:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push iccpinfotech/ausmanju:$BUILD_NUMBER'
+                sh 'docker push iccpinfotech/ausmanjujs:$BUILD_NUMBER'
             }
         }
 }
